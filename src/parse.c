@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   parse.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: olcayyetiskin <olcayyetiskin@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/20 15:14:51 by olcayyetisk       #+#    #+#             */
-/*   Updated: 2024/11/30 23:11:31 by olcayyetisk      ###   ########.fr       */
+/*   Created: 2024/11/20 15:21:29 by olcayyetisk       #+#    #+#             */
+/*   Updated: 2024/12/06 14:52:06 by olcayyetisk      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/cub3d.h"
 
-
-int main(int ac,char **av)
+void	map_start(t_parse *map, char *str)
 {
-    if (ac == 2)
-    {
-        t_parse *map;
-        map = malloc(sizeof(t_parse));
-        map_start(map, av[1]);
-    }
-    else
-    {
-        write(1, " ac az var Error\n", 6);
-        return (0);
-    }
+	int	fd;
+
+	map_name(str);
+	fd = file_control(map, str);
+	map->map = read_map(map, fd);
+	map_char_control(map);
+	copy_map(map);
+	read_xpmmm(map);
+	//read_xpm(map);
+	xpm_control(map);
+	map_division_control(map);
+	fill_x_map(map);
 }

@@ -3,12 +3,14 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: olyetisk <olyetisk@student.42.fr>          +#+  +:+       +#+         #
+#    By: olcayyetiskin <olcayyetiskin@student.42    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/08/30 10:33:01 by bgrhnzcn          #+#    #+#              #
-#    Updated: 2024/11/10 15:16:50 by olyetisk         ###   ########.fr        #
+#    Created: 2024/11/18 13:52:29 by olcayyetisk       #+#    #+#              #
+#    Updated: 2024/12/01 00:05:07 by olcayyetisk      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+
+
 
 ################################################################################
 #                                                                              #
@@ -89,9 +91,11 @@ LIB_DIR = ./lib
 
 # Source Files
 SRCS = $(SRC)/main.c \
-	$(SRC)/checks.c \
-	$(SRC)/take_a_map.c \
-
+	$(SRC)/map_utils.c \
+	$(SRC)/take_map.c \
+	$(SRC)/parse.c \
+	$(SRC)/map_utils_2.c \
+	$(SRC)/map_utils_3.c \
 
 # Object Directory Creation
 $(OBJ):
